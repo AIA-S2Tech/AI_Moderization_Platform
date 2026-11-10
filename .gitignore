@@ -1,0 +1,31 @@
+# Node.js dependencies
+node_modules/
+**/node_modules/
+
+# Build outputs
+# build/
+
+# Python virtual environments
+venv/
+**/venv/
+
+# Python bytecode cache
+**/__pycache__/
+# *.py[cod]
+# *$py.class
+
+# SQLite DB (uncomment if needed)
+# *.db
+
+# Google Drive OAuth files
+credentials.json
+token.json
+
+# Service Account files (if used later)
+service-account.json
+credentials/
+
+# Environment variables
+.env
+.env.*
+!.env.example
