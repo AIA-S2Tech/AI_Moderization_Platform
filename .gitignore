@@ -24,3 +24,8 @@ token.json
 # Service Account files (if used later)
 service-account.json
 credentials/
+
+# Environment variables
+.env
+.env.*
+!.env.example
