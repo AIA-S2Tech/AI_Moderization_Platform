@@ -96,3 +96,18 @@ export const PRIVATE_PAGES = [
 
 export const findPageByPath = (pathname) =>
   PRIVATE_PAGES.find((p) => p.path === pathname) || null;
+
+// Breadcrumb trail for a URL : walks up the `parent` chain from the
+// current page to Home. Returns [{ label, path }] from Home → current page,
+// or [] for a path that is not in PRIVATE_PAGES (e.g. the 404 page).
+export const getBreadcrumbTrail = (pathname) => {
+  // Ignore a trailing slash so "/repositories/" matches "/repositories".
+  const cleanPath = pathname.length > 1 ? pathname.replace(/\/+$/, "") : pathname;
+  const trail = [];
+  let page = findPageByPath(cleanPath);
+  while (page && trail.length < PRIVATE_PAGES.length) {
+    trail.unshift({ label: page.breadcrumb, path: page.path });
+    page = page.parent ? findPageByPath(page.parent) : null;
+  }
+  return trail;
+};
