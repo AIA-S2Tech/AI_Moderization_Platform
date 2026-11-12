@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import {
   Avatar,
   Box,
@@ -26,7 +26,6 @@ import { FiBell,FiHelpCircle, FiLogOut, FiSearch, FiUser } from "react-icons/fi"
 import { Link as RouterLink, useNavigate } from "react-router-dom";
 import { ROUTES } from "../../config/routes";
 import { logout } from "../../utils/auth";
-import { getNotifications, getUnreadCount } from "../../services/notificationService";
 
 const iconButtonStyles = {
   variant: "ghost",
@@ -125,21 +124,8 @@ const HelpButton = () => (
   />
 );
 
-// ---------- Notification bell ----------
-const NotificationBell = () => {
-  const [notifications, setNotifications] = useState([]);
-
-  useEffect(() => {
-    let active = true;
-    getNotifications()
-      .then((list) => active && setNotifications(list))
-      .catch(() => active && setNotifications([]));
-    return () => {
-      active = false;
-    };
-  }, []);
-
-  const unread = getUnreadCount(notifications);
+// UI only for now – 'unread' shows the red count badge when > 0.
+const NotificationBell = ({ unread = 0 }) => {
   const label = unread > 0 ? `Notifications, ${unread} unread` : "Notifications";
 
   return (
@@ -170,24 +156,9 @@ const NotificationBell = () => {
       </Box>
       <MenuList zIndex="dropdown" boxShadow="dropdown" w="320px" py={1}>
         <MenuGroup title="Notifications" color="text.primary">
-          {notifications.length === 0 ? (
-            <Text px={3} py={2} fontSize="sm" color="text.muted">
-              You're all caught up.
-            </Text>
-          ) : (
-            notifications.map((n) => (
-              <MenuItem key={n.id} alignItems="flex-start" bg={n.read ? "transparent" : "bg.navTint"}>
-                <Box>
-                  <Text fontSize="sm" fontWeight={n.read ? "normal" : "semibold"} color="text.primary">
-                    {n.title}
-                  </Text>
-                  <Text fontSize="xs" color="text.secondary">
-                    {n.message}
-                  </Text>
-                </Box>
-              </MenuItem>
-            ))
-          )}
+          <Text px={3} py={2} fontSize="sm" color="text.muted">
+            No new notifications.
+          </Text>
         </MenuGroup>
       </MenuList>
     </Menu>
