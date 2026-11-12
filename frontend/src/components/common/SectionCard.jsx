@@ -72,10 +72,13 @@ const SectionCard = forwardRef(function SectionCard(
   const hasHeader = title || subtitle || actions;
 
   return (
-    <Card ref={ref} padding={0} overflow="hidden" {...rest}>
+    // No overflow="hidden" here: it would clip dropdown menus (row ⋮ menus, popovers)
+    // opened inside the card. Only the header's top corners are rounded instead.
+    <Card ref={ref} padding={0} {...rest}>
       {hasHeader && (
         <Flex
           bg={t.headerBg}
+          borderTopRadius="calc(var(--chakra-radii-xl) - 1px)"
           px="cardPadding"
           py={4}
           align={{ base: "flex-start", md: "center" }}
