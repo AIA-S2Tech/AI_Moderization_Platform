@@ -14,12 +14,14 @@ import ButtonDemo from "./demos/ButtonDemo";
 import StatusBadgeDemo from "./demos/StatusBadgeDemo";
 import CardDemo from "./demos/CardDemo";
 import TabsDemo from "./demos/TabsDemo";
+import DataTableDemo from "./demos/DataTableDemo";
 
 const demos = [
   { id: "button", label: "Button", Component: ButtonDemo },
   { id: "status-badge", label: "StatusBadge", Component: StatusBadgeDemo },
   { id: "card", label: "Card / SectionCard / PageHeader", Component: CardDemo },
   { id: "tabs", label: "Tabs", Component: TabsDemo },
+  { id: "data-table", label: "DataTable", Component: DataTableDemo },
 ];
 
 const UiKitPage = () => (
