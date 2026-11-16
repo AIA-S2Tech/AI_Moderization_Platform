@@ -14,12 +14,7 @@ import {
   MenuGroup,
   MenuItem,
   MenuList,
-  Popover,
-  PopoverBody,
-  PopoverContent,
-  PopoverTrigger,
   Text,
-  useDisclosure,
 } from "@chakra-ui/react";
 import { ChevronDownIcon } from "@chakra-ui/icons";
 import { FiBell,FiHelpCircle, FiLogOut, FiSearch, FiUser } from "react-icons/fi";
@@ -51,7 +46,7 @@ const getDisplayName = (user) => {
 };
 
 // ---------- Global search ----------
-const SearchField = ({ autoFocus = false, onDone }) => {
+const SearchField = ({ onDone }) => {
   const navigate = useNavigate();
   const [query, setQuery] = useState("");
 
@@ -75,7 +70,9 @@ const SearchField = ({ autoFocus = false, onDone }) => {
           placeholder="Search artifacts, evidence, rules…"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          autoFocus={autoFocus}
+          onKeyDown={(e) => e.key === "Escape" && onDone?.()}
+          onBlur={() => onDone?.()}
+          autoFocus
           bg="bg.surface"
           color="text.primary"
           borderRadius="md"
@@ -86,29 +83,26 @@ const SearchField = ({ autoFocus = false, onDone }) => {
   );
 };
 
+// Search icon – clicking it turns into the search box in the same place.
+// Closes on Esc, click outside, or after searching.
 const GlobalSearch = () => {
-  const { isOpen, onOpen, onClose } = useDisclosure();
-  return (
-    <>
-      {/* 1024px and up: always-visible search box */}
-      <Box display={{ base: "none", lg: "block" }} w="240px">
-        <SearchField />
-      </Box>
+  const [isOpen, setIsOpen] = useState(false);
 
-      {/* Smaller screens: search icon that opens the box in a popover */}
-      <Box display={{ base: "block", lg: "none" }}>
-        <Popover isOpen={isOpen} onOpen={onOpen} onClose={onClose} placement="bottom-end" isLazy>
-          <PopoverTrigger>
-            <IconButton aria-label="Search" icon={<Icon as={FiSearch} boxSize={5} />} {...iconButtonStyles} />
-          </PopoverTrigger>
-          <PopoverContent w={{ base: "calc(100vw - 32px)", sm: "320px" }} boxShadow="dropdown" zIndex="dropdown">
-            <PopoverBody>
-              <SearchField autoFocus onDone={onClose} />
-            </PopoverBody>
-          </PopoverContent>
-        </Popover>
-      </Box>
-    </>
+  if (!isOpen) {
+    return (
+      <IconButton
+        aria-label="Search"
+        icon={<Icon as={FiSearch} boxSize={5} />}
+        onClick={() => setIsOpen(true)}
+        {...iconButtonStyles}
+      />
+    );
+  }
+
+  return (
+    <Box w={{ base: "160px", sm: "240px" }}>
+      <SearchField onDone={() => setIsOpen(false)} />
+    </Box>
   );
 };
 
@@ -195,7 +189,7 @@ const UserMenu = () => {
           <ChevronDownIcon display={{ base: "none", lg: "block" }} color="text.inverse" />
         </Flex>
       </MenuButton>
-      <MenuList zIndex="dropdown" boxShadow="dropdown" minW="220px" py={1}>
+      <MenuList zIndex="dropdown" boxShadow="dropdown" minW="220px" py={1} color="text.primary">
         <Box px={3} py={2}>
           <Text fontSize="sm" fontWeight="semibold" color="text.primary" noOfLines={1}>
             {name}

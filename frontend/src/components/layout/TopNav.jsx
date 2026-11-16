@@ -21,7 +21,7 @@ import {
 } from "@chakra-ui/react";
 import { ChevronDownIcon, HamburgerIcon } from "@chakra-ui/icons";
 import { Link as RouterLink, NavLink, useLocation } from "react-router-dom";
-import S2TechLogo from "../../assets/img/s2tech-logo.svg";
+import S2TechLogo from "../../assets/img/s2tech-wordmark.svg";
 import { ROUTES } from "../../config/routes";
 import { APP_TITLE, TOP_NAV_ITEMS, isNavItemActive } from "../../config/navigation";
 
