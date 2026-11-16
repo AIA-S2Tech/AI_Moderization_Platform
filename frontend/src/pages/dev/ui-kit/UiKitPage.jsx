@@ -15,6 +15,7 @@ import StatusBadgeDemo from "./demos/StatusBadgeDemo";
 import CardDemo from "./demos/CardDemo";
 import TabsDemo from "./demos/TabsDemo";
 import DataTableDemo from "./demos/DataTableDemo";
+import RepositoryPanelDemo from "./demos/RepositoryPanelDemo";
 
 const demos = [
   { id: "button", label: "Button", Component: ButtonDemo },
@@ -22,6 +23,7 @@ const demos = [
   { id: "card", label: "Card / SectionCard / PageHeader", Component: CardDemo },
   { id: "tabs", label: "Tabs", Component: TabsDemo },
   { id: "data-table", label: "DataTable", Component: DataTableDemo },
+  { id: "repository-panel", label: "RepositoryPanel", Component: RepositoryPanelDemo },
 ];
 
 const UiKitPage = () => (
