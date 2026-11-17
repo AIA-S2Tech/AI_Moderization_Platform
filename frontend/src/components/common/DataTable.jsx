@@ -85,7 +85,9 @@ const getKey = (row, rowKey, index) => {
 
 // Sorts numbers numerically, Dates by time, everything else as text
 // ("File 2" before "File 10"). Empty values always go last.
-const compareValues = (a, b) => {
+// Exported so paginated lists (e.g. RepositoryPanel) can sort the full list
+// before slicing a page, using exactly the same rules as the table.
+export const compareValues = (a, b) => {
   const aEmpty = a === undefined || a === null || a === "";
   const bEmpty = b === undefined || b === null || b === "";
   if (aEmpty && bEmpty) return 0;
