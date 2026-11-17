@@ -44,11 +44,44 @@ const Marker = ({ listStyle, index, color }) => {
   );
 };
 
-// Card with a coloured header band and a list. e.g.
+// With a number : card with a coloured header band, e.g. "1. EVIDENCE REPOSITORY"
+// Without       : plain heading + list (Key Principles, Benefits)
+// e.g.
 // <InfoListCard number={1} title="Evidence Repository" tone="navy" listStyle="bullets"
 //   items={["Stores all source evidence provided by the client…", "…"]} />
+// <InfoListCard title="Benefits" listStyle="ticks" items={["Ensures transparency…", "…"]} />
 const InfoListCard = ({ number, title, tone = "navy", listStyle = "bullets", items = [] }) => {
   const t = TONES[tone] || TONES.navy;
+  const hasBand = number != null;
+
+  const list = (
+    <Box
+      as={listStyle === "numbered" ? "ol" : "ul"}
+      listStyleType="none"
+      px={hasBand ? "cardPadding" : 0}
+      py={hasBand ? 4 : 0}
+    >
+      {items.map((item, index) => (
+        <Flex as="li" key={item} align="flex-start" gap={3} mb={index < items.length - 1 ? 2 : 0}>
+          <Marker listStyle={listStyle} index={index} color={t.marker} />
+          <Text fontSize="sm" color="text.primary">
+            {item}
+          </Text>
+        </Flex>
+      ))}
+    </Box>
+  );
+
+  if (!hasBand) {
+    return (
+      <Box>
+        <Text as="h3" fontSize="xl" fontWeight="bold" color="text.primary" mb={3}>
+          {title}
+        </Text>
+        {list}
+      </Box>
+    );
+  }
 
   return (
     <Card padding={0} overflow="hidden">
@@ -61,20 +94,10 @@ const InfoListCard = ({ number, title, tone = "navy", listStyle = "bullets", ite
           letterSpacing="wide"
           color="text.inverse"
         >
-          {number != null ? `${number}. ${title}` : title}
+          {`${number}. ${title}`}
         </Text>
       </Box>
-
-      <Box as={listStyle === "numbered" ? "ol" : "ul"} listStyleType="none" px="cardPadding" py={4}>
-        {items.map((item, index) => (
-          <Flex as="li" key={item} align="flex-start" gap={3} mb={index < items.length - 1 ? 2 : 0}>
-            <Marker listStyle={listStyle} index={index} color={t.marker} />
-            <Text fontSize="sm" color="text.primary">
-              {item}
-            </Text>
-          </Flex>
-        ))}
-      </Box>
+      {list}
     </Card>
   );
 };
