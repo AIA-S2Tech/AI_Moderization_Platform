@@ -1,3 +1,5 @@
+import { ROUTES } from '../config/routes';
+
 export const isAuthenticated = () => {
   const isUser_valid = JSON.parse(localStorage.getItem('user'));
   // const isSuperAdmin = isUser_valid?.user?.roles?.includes("super_admin");
@@ -19,7 +21,7 @@ export const logout = async() => {
   // TDOD: need to modify this logic and add refresh token
   if (response.ok || response.status === 401) {
     localStorage.removeItem('user');
-    window.location.href = '/sign-in';
+    window.location.href = ROUTES.SIGN_IN;
   } else {
     // Handle errors (like 401 Unauthorized)
     alert(data.error || 'Failed to Logout');
@@ -47,7 +49,7 @@ export const login = async (email, password) => {
       // Save the token to localStorage or context
       localStorage.setItem('user', JSON.stringify(data));
       localStorage.setItem('user_timestamp', new Date().toISOString());
-      window.location.href = '/';
+      window.location.href = ROUTES.DASHBOARD;
     } else {
       // Handle errors (like 401 Unauthorized)
       alert(data.error || 'Login failed');
