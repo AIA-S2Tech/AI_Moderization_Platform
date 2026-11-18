@@ -25,6 +25,7 @@ import {
   FiCode,
   FiCpu,
   FiDatabase,
+  FiEdit3,
   FiFileText,
   FiFilter,
   FiGitBranch,
@@ -36,6 +37,7 @@ import {
   FiMap,
   FiRefreshCw,
   FiSearch,
+  FiSettings,
   FiShield,
   FiShuffle,
   FiTarget,
@@ -196,6 +198,47 @@ export const WORKSPACE_CONFIG = {
     },
   },
 };
+
+// ── Shared by every workspace (MethodologyWorkspaceTemplate, T-17 – T-20) ──
+
+// Workspace tabs, in order. `type` tells the template what to render:
+//   overview    : WorkspaceOverviewTab (T-18)
+//   actions     : Approved Actions + Recent Artifacts + summary row (T-17)
+//   repository  : RepositoryPanel, compact, filtered to the capability (T-19)
+//   placeholder : EmptyState until the workspace APIs arrive (T-20)
+export const WORKSPACE_TABS = [
+  { id: "overview", label: "Overview", type: "overview" },
+  { id: "actions", label: "Actions", type: "actions" },
+  { id: "artifacts", label: "Artifacts", type: "repository", repository: "artifacts" },
+  { id: "evidence", label: "Evidence", type: "repository", repository: "evidence" },
+  {
+    id: "sme-tasks",
+    label: "SME Tasks",
+    type: "placeholder",
+    icon: FiUsers,
+    title: "Coming in the next sprint",
+    message: "SME questions and validation tasks for this capability will be listed here.",
+  },
+  {
+    id: "issues",
+    label: "Issues",
+    type: "placeholder",
+    icon: FiAlertTriangle,
+    title: "Coming in the next sprint",
+    message: "Open issues and assumptions for this capability will be listed here.",
+  },
+];
+
+export const DEFAULT_WORKSPACE_TAB = "actions";
+
+// Artifact Lifecycle (applies across all capabilities) – Overview tab, FlowStepper steps.
+export const ARTIFACT_LIFECYCLE = [
+  { icon: FiFileText, title: "Generated", description: "AI workflow completed", tone: "navy" },
+  { icon: FiEdit3, title: "Professional Review", description: "Technical review by practitioner", tone: "navy" },
+  { icon: FiGitMerge, title: "SME / Technical Validation", description: "SME validation in progress", tone: "navy" },
+  { icon: FiShield, title: "Certified", description: "Approved and traceable", tone: "green" },
+  { icon: FiSettings, title: "Decision-Ready", description: "Ready for decision or handoff", tone: "green" },
+];
 
 // In methodology order (1 → 5) – for the dashboard and any list of workspaces.
 export const WORKSPACE_LIST = WORKSPACE_ROUTES.map((w) => WORKSPACE_CONFIG[w.key]).filter(Boolean);
