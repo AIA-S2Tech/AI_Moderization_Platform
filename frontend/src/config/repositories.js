@@ -21,6 +21,8 @@
 //                                "All Types"). Without options, they come from the data.
 //   rowActions                 : ⋮ menu items [{ id, label }]; the page handles the click
 //   empty                      : { title, message } when the repository has no items
+//   info                       : { number, items } – numbered info panel under the page
+//                                (InfoListCard, title & tone from above)
 
 import { FiPlus } from "react-icons/fi";
 import { ROUTES, WORKSPACE_ROUTES } from "./routes";
@@ -161,6 +163,16 @@ export const REPOSITORY_CONFIG = {
     ],
     rowActions: [...commonRowActions, { id: "traceability", label: "View Traceability" }],
     empty: { title: "No certified knowledge yet", message: "Items appear here once they are validated and certified." },
+    info: {
+      number: 3,
+      items: [
+        "Stores validated and approved project knowledge.",
+        "Includes final deliverables, certified analyses, validated business rules, approved inventories, and other decision-ready artifacts.",
+        "Items are moved here after completion of the review and validation process.",
+        "Each item includes version, certification date, approvers, and traceability to source evidence.",
+        "This repository contains the authoritative project knowledge and is used for client deliverables and future reference.",
+      ],
+    },
   },
 };
 
