@@ -16,6 +16,7 @@ import CardDemo from "./demos/CardDemo";
 import TabsDemo from "./demos/TabsDemo";
 import DataTableDemo from "./demos/DataTableDemo";
 import RepositoryPanelDemo from "./demos/RepositoryPanelDemo";
+import WorkspaceComponentsDemo from "./demos/WorkspaceComponentsDemo";
 
 const demos = [
   { id: "button", label: "Button", Component: ButtonDemo },
@@ -24,6 +25,7 @@ const demos = [
   { id: "tabs", label: "Tabs", Component: TabsDemo },
   { id: "data-table", label: "DataTable", Component: DataTableDemo },
   { id: "repository-panel", label: "RepositoryPanel", Component: RepositoryPanelDemo },
+  { id: "workspace-components", label: "Workspace components", Component: WorkspaceComponentsDemo },
 ];
 
 const UiKitPage = () => (
