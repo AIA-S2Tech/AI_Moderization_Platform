@@ -2,13 +2,14 @@ import React from "react";
 import {
   Modal as ChakraModal,
   ModalBody,
+  ModalCloseButton,
   ModalContent,
   ModalFooter,
   ModalHeader,
   ModalOverlay,
 } from "@chakra-ui/react";
 
-// Shared pop-up. Closes on ESC and overlay click; keyboard focus stays inside
+// Shared pop-up. Closes on ✕, ESC and overlay click; keyboard focus stays inside
 // while open (focus trap) and returns to the opening button on close. e.g.
 // <Modal isOpen={isOpen} onClose={onClose} title="New Folder" size="md"
 //   footer={<><Button variant="outline" onClick={onClose}>Cancel</Button><Button>Create</Button></>}>
@@ -26,6 +27,7 @@ const Modal = ({ isOpen, onClose, title, children, footer, size = "md" }) => (
       <ModalHeader fontSize="lg" fontWeight="bold" color="text.primary">
         {title}
       </ModalHeader>
+      <ModalCloseButton color="text.muted" top={4} right={4} _focusVisible={{ boxShadow: "focus" }} />
       <ModalBody fontSize="sm" color="text.secondary">
         {children}
       </ModalBody>

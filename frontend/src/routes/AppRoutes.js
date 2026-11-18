@@ -13,12 +13,14 @@ import UserRegister from "../pages/UserRegister";
 import PlaceholderPage from "../pages/PlaceholderPage";
 import NotFoundPage from "../pages/NotFoundPage";
 import UiKitPage from "../pages/dev/ui-kit/UiKitPage";
+import EvidenceRepositoryPage from "../pages/repositories/EvidenceRepositoryPage";
 
 // Real page components are registered here as they land; anything not listed
 // renders the PlaceholderPage with the title from config/routes.js.
 const PAGE_COMPONENTS = {
   // [ROUTES.DASHBOARD]: ProjectDashboard,   // T-29
   [ROUTES.DEV_UI_KIT]: UiKitPage, // T-07
+  [ROUTES.EVIDENCE_REPOSITORY]: EvidenceRepositoryPage, // T-61
 };
 
 const Private = ({ children }) => <ProtectedRoute>{children}</ProtectedRoute>;

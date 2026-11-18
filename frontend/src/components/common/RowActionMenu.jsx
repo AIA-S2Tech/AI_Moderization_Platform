@@ -1,5 +1,5 @@
 import React from "react";
-import { Menu, MenuButton, MenuItem, MenuList, Portal } from "@chakra-ui/react";
+import { Icon, Menu, MenuButton, MenuItem, MenuList, Portal } from "@chakra-ui/react";
 import { FiMoreVertical } from "react-icons/fi";
 import Button from "./Button";
 
@@ -8,15 +8,19 @@ import Button from "./Button";
 // Closes on outside click and ESC (Chakra Menu behaviour).
 const RowActionMenu = ({ items = [] }) => (
   <Menu placement="bottom-end" isLazy>
+    {/* MenuButton always wraps its content in a <span>, so the icon goes inside
+        as a child (an 'icon' prop would be ignored and the button would look empty). */}
     <MenuButton
       as={Button}
       variant="ghost"
       size="sm"
-      icon={<FiMoreVertical />}
+      px={0}
       aria-label="Row actions"
       // Don't trigger a click on the table row behind the button.
       onClick={(e) => e.stopPropagation()}
-    />
+    >
+      <Icon as={FiMoreVertical} display="block" mx="auto" aria-hidden="true" />
+    </MenuButton>
     {/* Portal keeps the menu from being clipped by a scrolling table. */}
     <Portal>
       <MenuList
