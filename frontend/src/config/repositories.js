@@ -21,6 +21,8 @@
 //                                "All Types"). Without options, they come from the data.
 //   rowActions                 : ⋮ menu items [{ id, label }]; the page handles the click
 //   empty                      : { title, message } when the repository has no items
+//   info                       : { number, items } – numbered info panel under the page
+//                                (InfoListCard, title & tone from above)
 
 import { FiPlus } from "react-icons/fi";
 import { ROUTES, WORKSPACE_ROUTES } from "./routes";
@@ -126,6 +128,16 @@ export const REPOSITORY_CONFIG = {
     ],
     rowActions: [...commonRowActions, { id: "submit-review", label: "Submit for Review" }],
     empty: { title: "No artifacts yet", message: "Start by running an approved action in a workspace." },
+    info: {
+      number: 2,
+      items: [
+        "Stores AI-generated outputs and practitioner working artifacts.",
+        "Includes draft deliverables, intermediate outputs, analysis results, and working documents.",
+        "Items move through a validation lifecycle (Generated → In Review → Revised → Ready for Certification).",
+        "Multiple versions are maintained.",
+        "Artifacts in this repository are not yet certified and should not be treated as approved project knowledge.",
+      ],
+    },
   },
 
   // ── 3. Certified Knowledge Repository ───────────────────────────────
