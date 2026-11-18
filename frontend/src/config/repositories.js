@@ -21,6 +21,8 @@
 //                                "All Types"). Without options, they come from the data.
 //   rowActions                 : ⋮ menu items [{ id, label }]; the page handles the click
 //   empty                      : { title, message } when the repository has no items
+//   info                       : { number, items } – numbered info panel under the page
+//                                (InfoListCard, title & tone from above)
 
 import { FiPlus } from "react-icons/fi";
 import { ROUTES, WORKSPACE_ROUTES } from "./routes";
@@ -84,6 +86,16 @@ export const REPOSITORY_CONFIG = {
     ],
     rowActions: [...commonRowActions, { id: "edit-metadata", label: "Edit Metadata" }],
     empty: { title: "No evidence yet", message: "Upload source code, documents and other project evidence." },
+    info: {
+      number: 1,
+      items: [
+        "Stores all source evidence provided by the client or gathered by the team.",
+        "Includes code, documents, requirements, architecture diagrams, data models, procedures, policies, tests, and meeting notes.",
+        "Each item includes metadata (source, date, classification, version).",
+        "Evidence can be organized by type, source, or methodology capability.",
+        "Evidence remains in this repository throughout the project.",
+      ],
+    },
   },
 
   // ── 2. Working / Generated Artifact Repository ──────────────────────
