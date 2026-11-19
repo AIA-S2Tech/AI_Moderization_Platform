@@ -12,6 +12,7 @@ import UserRegister from "../pages/UserRegister";
 // Private pages
 import PlaceholderPage from "../pages/PlaceholderPage";
 import NotFoundPage from "../pages/NotFoundPage";
+import ArtifactRepositoryPage from "../pages/repositories/ArtifactRepositoryPage";
 import UiKitPage from "../pages/dev/ui-kit/UiKitPage";
 import EvidenceRepositoryPage from "../pages/repositories/EvidenceRepositoryPage";
 
@@ -19,6 +20,7 @@ import EvidenceRepositoryPage from "../pages/repositories/EvidenceRepositoryPage
 // renders the PlaceholderPage with the title from config/routes.js.
 const PAGE_COMPONENTS = {
   // [ROUTES.DASHBOARD]: ProjectDashboard,   // T-29
+  [ROUTES.ARTIFACT_REPOSITORY]: ArtifactRepositoryPage, // T-63
   [ROUTES.DEV_UI_KIT]: UiKitPage, // T-07
   [ROUTES.EVIDENCE_REPOSITORY]: EvidenceRepositoryPage, // T-61
 };
