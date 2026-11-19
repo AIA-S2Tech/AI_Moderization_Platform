@@ -58,17 +58,18 @@ const SolidStep = ({ title, description, t }) => (
     align="center"
     justify="center"
     textAlign="center"
-    minH="96px"
-    p={4}
+    minH="56px"
+    px={2}
+    py={3}
     bg={t.solid}
     color="text.inverse"
     borderRadius="lg"
   >
-    <Text fontSize="md" fontWeight="bold">
+    <Text fontSize="xs" fontWeight="bold" lineHeight="short">
       {title}
     </Text>
     {description && (
-      <Text fontSize="sm" mt={1}>
+      <Text fontSize="2xs" mt={1} lineHeight="short">
         ({description})
       </Text>
     )}
@@ -99,11 +100,12 @@ const FlowStepper = ({ steps = [], variant = "soft" }) => {
       direction={{ base: "column", md: "row" }}
       wrap={{ md: "wrap" }}
       align="stretch"
-      gap={3}
+      gap={isSolid ? 2 : 3}
     >
       {steps.map((step, index) => (
         <Fragment key={step.title}>
-          <Box as="li" display="flex" flex="1" minW={{ md: "180px" }}>
+          {/* Solid boxes may shrink (narrow column on the Repositories hub); soft ones wrap at 180px */}
+          <Box as="li" display="flex" flex={isSolid ? "1 1 0" : "1"} minW={{ base: 0, md: isSolid ? 0 : "180px" }}>
             <StepBox {...step} t={TONES[step.tone] || TONES.navy} />
           </Box>
           {index < steps.length - 1 && (

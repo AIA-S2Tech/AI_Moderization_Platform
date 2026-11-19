@@ -29,3 +29,10 @@ export const REPOSITORY_INFO = {
     ],
   },
 };
+
+// Page title block of the Repositories hub (/repositories).
+export const REPOSITORY_HUB = {
+  title: "Project Repositories",
+  subtitle:
+    "Separate management of source evidence, working/generated artifacts, and certified knowledge to ensure transparency, traceability, and a clear validation path.",
+};
