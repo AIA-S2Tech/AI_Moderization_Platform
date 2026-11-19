@@ -14,6 +14,7 @@ import PlaceholderPage from "../pages/PlaceholderPage";
 import CertifiedRepositoryPage from "../pages/repositories/CertifiedRepositoryPage";
 import NotFoundPage from "../pages/NotFoundPage";
 import ArtifactRepositoryPage from "../pages/repositories/ArtifactRepositoryPage";
+import AiCodeTransformationPage from "../pages/workspaces/AiCodeTransformationPage";
 import UiKitPage from "../pages/dev/ui-kit/UiKitPage";
 import EvidenceRepositoryPage from "../pages/repositories/EvidenceRepositoryPage";
 
@@ -23,6 +24,7 @@ const PAGE_COMPONENTS = {
   [ROUTES.CERTIFIED_REPOSITORY]: CertifiedRepositoryPage, // T-64
   // [ROUTES.DASHBOARD]: ProjectDashboard,   // T-29
   [ROUTES.ARTIFACT_REPOSITORY]: ArtifactRepositoryPage, // T-63
+  [ROUTES.AI_CODE_TRANSFORMATION]: AiCodeTransformationPage, // T-67
   [ROUTES.DEV_UI_KIT]: UiKitPage, // T-07
   [ROUTES.EVIDENCE_REPOSITORY]: EvidenceRepositoryPage, // T-61
 };
