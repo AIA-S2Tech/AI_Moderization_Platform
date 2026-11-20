@@ -28,7 +28,7 @@ const WorkspaceHeaderDemo = () => {
     <DemoSection
       id="workspace-header"
       title="WorkspaceHeader"
-      description="components/workspace/WorkspaceHeader – ‹ Back to Workspace link, capability title, StatusBadge, '% Complete' and ⋮ menu (RowActionMenu). Menu is hidden when menuItems is empty."
+      description="components/workspace/WorkspaceHeader – ‹ Back to Workspace link, capability title, StatusBadge, '% Complete' and ⋮ menu (RowActionMenu). The ⋮ always shows, even without menuItems."
     >
       <DemoRow label="Statuses (with ⋮ menu)" align="stretch">
         <Card padding={0} w="100%">
@@ -51,7 +51,7 @@ const WorkspaceHeaderDemo = () => {
         </Card>
       </DemoRow>
 
-      <DemoRow label="No menu, custom back link" align="stretch">
+      <DemoRow label="No menu items, custom back link" align="stretch">
         <Card padding={0} w="100%">
           <WorkspaceHeader
             title="AI-Assisted Code Transformation"
