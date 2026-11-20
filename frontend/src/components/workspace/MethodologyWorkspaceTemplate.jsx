@@ -16,8 +16,11 @@
 //   menuItems         : optional ⋮ menu items for the WorkspaceHeader [{ label, onClick }]
 //   defaultTab        : tab shown first (default "actions", as in the mockups)
 //   syncTabWithUrl    : keep the open tab in the URL (?tab=evidence) – default true
-//   onRepositoryAction: optional (repositoryKey, actionId) => void – header button of the
-//                       Artifacts / Evidence panels (e.g. open Upload Evidence)
+//   onRepositoryAction: optional (repositoryKey, actionId) => void – called when the header
+//                       button of the Artifacts / Evidence panels is clicked. The button
+//                       itself already works: it opens the same modal as the repository
+//                       page ("+ New Folder" → NewFolderModal, "+ Upload Evidence" →
+//                       UploadEvidenceModal) and the tab's list reloads after a save.
 //   ...rest           : props for the outer box
 
 import React, { useCallback, useEffect, useState } from "react";
@@ -27,6 +30,8 @@ import Card from "../common/Card";
 import Tabs from "../common/Tabs";
 import EmptyState from "../common/EmptyState";
 import RepositoryPanel from "../repository/RepositoryPanel";
+import NewFolderModal from "../repository/NewFolderModal";
+import UploadEvidenceModal from "../repository/UploadEvidenceModal";
 import WorkspaceHeader from "./WorkspaceHeader";
 import WorkspaceOverviewTab from "./WorkspaceOverviewTab";
 import ApprovedActionsPanel from "./ApprovedActionsPanel";
@@ -65,6 +70,19 @@ const MethodologyWorkspaceTemplate = ({
   // After an approved action runs: reload quietly (the current data stays on screen
   // until the new data arrives) so Recent Artifacts shows the new artifact.
   const reload = useCallback(() => setReloadCount((n) => n + 1), []);
+
+  // ── Artifacts / Evidence header button → the repository modals ──────
+  // openModal: the action id from config/repositories.js ("upload" | "new-folder")
+  const [openModal, setOpenModal] = useState(null);
+  // Changing it makes the panel load its list again (after an upload / new folder).
+  const [repositoryRefresh, setRepositoryRefresh] = useState(0);
+  const closeModal = () => setOpenModal(null);
+  const refreshRepository = () => setRepositoryRefresh((n) => n + 1);
+
+  const handleRepositoryAction = (repositoryKey, actionId) => {
+    setOpenModal(actionId);
+    if (onRepositoryAction) onRepositoryAction(repositoryKey, actionId);
+  };
 
   if (!config) return null;
 
@@ -113,7 +131,8 @@ const MethodologyWorkspaceTemplate = ({
               capability={workspaceId}
               compact
               showTabs={false}
-              onAction={onRepositoryAction ? (actionId) => onRepositoryAction(tab.repository, actionId) : undefined}
+              onAction={(actionId) => handleRepositoryAction(tab.repository, actionId)}
+              refreshKey={repositoryRefresh}
             />
           </Box>
         );
@@ -165,6 +184,10 @@ const MethodologyWorkspaceTemplate = ({
           />
         )}
       </Card>
+
+      {/* Same modals as the repository pages (T-59, T-62) */}
+      <UploadEvidenceModal isOpen={openModal === "upload"} onClose={closeModal} onUploaded={refreshRepository} />
+      <NewFolderModal isOpen={openModal === "new-folder"} onClose={closeModal} onCreated={refreshRepository} />
     </Box>
   );
 };

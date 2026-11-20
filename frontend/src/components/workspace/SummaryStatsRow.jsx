@@ -19,10 +19,11 @@ import SectionCard from "../common/SectionCard";
 import { StatGrid } from "../common/StatCard";
 import { getWorkspaceConfig } from "../../config/workspaces";
 
-// 1248 → "1,248" · 64 → "64%" · "Fair" → "Fair" · missing → "—"
+// 1248 → "1,248" · 64 → "64%" · 412 → "$412" (currency, US dollars) · "Fair" → "Fair" · missing → "—"
 export const formatStatValue = (value, format) => {
   if (value === null || value === undefined || value === "") return "—";
   if (format === "percent") return `${value}%`;
+  if (format === "currency" && typeof value === "number") return `$${value.toLocaleString("en-US")}`;
   if (format === "number" && typeof value === "number") return value.toLocaleString("en-US");
   return String(value);
 };
