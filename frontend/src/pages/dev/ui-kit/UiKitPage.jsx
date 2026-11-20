@@ -19,6 +19,7 @@ import RepositoryPanelDemo from "./demos/RepositoryPanelDemo";
 import WorkspaceHeaderDemo from "./demos/WorkspaceHeaderDemo";
 import WorkspaceComponentsDemo from "./demos/WorkspaceComponentsDemo";
 import MethodologyWorkspaceTemplateDemo from "./demos/MethodologyWorkspaceTemplateDemo";
+import DashboardComponentsDemo from "./demos/DashboardComponentsDemo";
 
 const demos = [
   { id: "button", label: "Button", Component: ButtonDemo },
@@ -30,6 +31,7 @@ const demos = [
   { id: "workspace-header", label: "WorkspaceHeader", Component: WorkspaceHeaderDemo },
   { id: "workspace-components", label: "Workspace components", Component: WorkspaceComponentsDemo },
   { id: "methodology-workspace-template", label: "MethodologyWorkspaceTemplate", Component: MethodologyWorkspaceTemplateDemo },
+  { id: "dashboard-components", label: "Dashboard components", Component: DashboardComponentsDemo },
 ];
 
 const UiKitPage = () => (
