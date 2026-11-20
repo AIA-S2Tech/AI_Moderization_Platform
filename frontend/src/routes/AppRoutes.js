@@ -19,6 +19,7 @@ import ArtifactRepositoryPage from "../pages/repositories/ArtifactRepositoryPage
 import BusinessRuleIntelligenceWorkspacePage from "../pages/workspaces/BusinessRuleIntelligenceWorkspacePage";
 import UiKitPage from "../pages/dev/ui-kit/UiKitPage";
 import EvidenceRepositoryPage from "../pages/repositories/EvidenceRepositoryPage";
+import RepositoriesHubPage from "../pages/repositories/RepositoriesHubPage";
 import LegacyDiscoveryWorkspacePage from "../pages/workspaces/LegacyDiscoveryWorkspacePage";
 
 // Real page components are registered here as they land; anything not listed
@@ -31,6 +32,7 @@ const PAGE_COMPONENTS = {
   [ROUTES.DEV_UI_KIT]: UiKitPage, // T-07
   [ROUTES.MODERNIZATION_ASSESSMENT]: ModernizationAssessmentWorkspacePage, // T-23
   [ROUTES.EVIDENCE_REPOSITORY]: EvidenceRepositoryPage, // T-61
+  [ROUTES.REPOSITORIES]: RepositoriesHubPage, // T-65
   [ROUTES.LEGACY_DISCOVERY]: LegacyDiscoveryWorkspacePage, // T-21
 };
 
