@@ -17,6 +17,7 @@ import TargetedModernizationPage from "../pages/workspaces/TargetedModernization
 import ModernizationAssessmentWorkspacePage from "../pages/workspaces/ModernizationAssessmentWorkspacePage";
 import NotFoundPage from "../pages/NotFoundPage";
 import ArtifactRepositoryPage from "../pages/repositories/ArtifactRepositoryPage";
+import AiCodeTransformationPage from "../pages/workspaces/AiCodeTransformationPage";
 import BusinessRuleIntelligenceWorkspacePage from "../pages/workspaces/BusinessRuleIntelligenceWorkspacePage";
 import UiKitPage from "../pages/dev/ui-kit/UiKitPage";
 import EvidenceRepositoryPage from "../pages/repositories/EvidenceRepositoryPage";
@@ -31,6 +32,7 @@ const PAGE_COMPONENTS = {
   // [ROUTES.DASHBOARD]: ProjectDashboard,   // T-29
   [ROUTES.DASHBOARD]: ProjectDashboardPage, // T-29
   [ROUTES.ARTIFACT_REPOSITORY]: ArtifactRepositoryPage, // T-63
+  [ROUTES.AI_CODE_TRANSFORMATION]: AiCodeTransformationPage, // T-67
   [ROUTES.BUSINESS_RULE_INTELLIGENCE]: BusinessRuleIntelligenceWorkspacePage, // T-22
   [ROUTES.DEV_UI_KIT]: UiKitPage, // T-07
   [ROUTES.MODERNIZATION_ASSESSMENT]: ModernizationAssessmentWorkspacePage, // T-23
