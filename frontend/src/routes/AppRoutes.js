@@ -11,6 +11,7 @@ import UserRegister from "../pages/UserRegister";
 
 // Private pages
 import PlaceholderPage from "../pages/PlaceholderPage";
+import ProjectDashboardPage from "../pages/dashboard/ProjectDashboardPage";
 import CertifiedRepositoryPage from "../pages/repositories/CertifiedRepositoryPage";
 import ModernizationAssessmentWorkspacePage from "../pages/workspaces/ModernizationAssessmentWorkspacePage";
 import NotFoundPage from "../pages/NotFoundPage";
@@ -24,7 +25,7 @@ import LegacyDiscoveryWorkspacePage from "../pages/workspaces/LegacyDiscoveryWor
 // renders the PlaceholderPage with the title from config/routes.js.
 const PAGE_COMPONENTS = {
   [ROUTES.CERTIFIED_REPOSITORY]: CertifiedRepositoryPage, // T-64
-  // [ROUTES.DASHBOARD]: ProjectDashboard,   // T-29
+  [ROUTES.DASHBOARD]: ProjectDashboardPage, // T-29
   [ROUTES.ARTIFACT_REPOSITORY]: ArtifactRepositoryPage, // T-63
   [ROUTES.BUSINESS_RULE_INTELLIGENCE]: BusinessRuleIntelligenceWorkspacePage, // T-22
   [ROUTES.DEV_UI_KIT]: UiKitPage, // T-07
