@@ -13,6 +13,7 @@ import UserRegister from "../pages/UserRegister";
 import PlaceholderPage from "../pages/PlaceholderPage";
 import ProjectDashboardPage from "../pages/dashboard/ProjectDashboardPage";
 import CertifiedRepositoryPage from "../pages/repositories/CertifiedRepositoryPage";
+import TargetedModernizationPage from "../pages/workspaces/TargetedModernizationPage";
 import ModernizationAssessmentWorkspacePage from "../pages/workspaces/ModernizationAssessmentWorkspacePage";
 import NotFoundPage from "../pages/NotFoundPage";
 import ArtifactRepositoryPage from "../pages/repositories/ArtifactRepositoryPage";
@@ -26,6 +27,8 @@ import LegacyDiscoveryWorkspacePage from "../pages/workspaces/LegacyDiscoveryWor
 // renders the PlaceholderPage with the title from config/routes.js.
 const PAGE_COMPONENTS = {
   [ROUTES.CERTIFIED_REPOSITORY]: CertifiedRepositoryPage, // T-64
+  [ROUTES.TARGETED_MODERNIZATION]: TargetedModernizationPage, // T-66
+  // [ROUTES.DASHBOARD]: ProjectDashboard,   // T-29
   [ROUTES.DASHBOARD]: ProjectDashboardPage, // T-29
   [ROUTES.ARTIFACT_REPOSITORY]: ArtifactRepositoryPage, // T-63
   [ROUTES.BUSINESS_RULE_INTELLIGENCE]: BusinessRuleIntelligenceWorkspacePage, // T-22
