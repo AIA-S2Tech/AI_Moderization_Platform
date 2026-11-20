@@ -8,7 +8,7 @@
 //   percentComplete : number 0–100 → "100% Complete" (hidden when null)
 //   backTo          : path of the back link (default: dashboard – Project Workspace)
 //   backLabel       : text of the back link (default "Back to Workspace")
-//   menuItems       : ⋮ menu items [{ label, onClick }] – menu hidden when empty
+//   menuItems       : ⋮ menu items [{ label, onClick }] – the ⋮ always shows (T-14)
 //   isLoading       : skeletons instead of the status & percentage
 //   ...rest         : props for the outer box (e.g. px, borderBottom)
 //
@@ -79,7 +79,7 @@ const WorkspaceHeader = ({
           )}
         </>
       )}
-      {menuItems.length > 0 && <RowActionMenu items={menuItems} />}
+      <RowActionMenu items={menuItems} />
     </HStack>
   </Flex>
 );

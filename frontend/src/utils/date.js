@@ -15,8 +15,11 @@ const DATE_ONLY = /^\d{4}-\d{2}-\d{2}$/;
 const SHORT = { month: "2-digit", day: "2-digit", year: "numeric" }; // 10/14/2024
 const MEDIUM = { month: "short", day: "numeric", year: "numeric" }; // Oct 14, 2024
 
-const format = (value, options, fallback) => {
-  if (!value) return fallback;
+const TIME = { hour: "numeric", minute: "2-digit" }; // 9:30 AM
+
+// value → { date, timeZone } or null when empty / invalid.
+const parse = (value) => {
+  if (!value) return null;
 
   let date = value;
   let timeZone = DISPLAY_TIMEZONE;
@@ -31,8 +34,13 @@ const format = (value, options, fallback) => {
       date = new Date(hasTimezone ? text : `${text}Z`); // no marker → UTC (backend utcnow)
     }
   }
-  if (Number.isNaN(date.getTime())) return fallback;
-  return date.toLocaleDateString("en-US", { ...options, timeZone });
+  return Number.isNaN(date.getTime()) ? null : { date, timeZone };
+};
+
+const format = (value, options, fallback) => {
+  const parsed = parse(value);
+  if (!parsed) return fallback;
+  return parsed.date.toLocaleDateString("en-US", { ...options, timeZone: parsed.timeZone });
 };
 
 // "2024-10-14" (or a Date / UTC timestamp) → "10/14/2024" – repository tables.
@@ -41,6 +49,16 @@ export const formatDate = (value, fallback = "—") => format(value, SHORT, fall
 
 // "2026-05-20" → "May 20, 2026" – workspace Recent Artifacts.
 export const formatDateMedium = (value, fallback = "—") => format(value, MEDIUM, fallback);
+
+// UTC timestamp "2026-05-21T13:30:00" → "May 21, 2026 9:30 AM" (US Eastern) – dashboard
+// "Last Updated". A plain calendar date has no time, so it shows the date only.
+export const formatDateTime = (value, fallback = "—") => {
+  const parsed = parse(value);
+  if (!parsed) return fallback;
+  const datePart = parsed.date.toLocaleDateString("en-US", { ...MEDIUM, timeZone: parsed.timeZone });
+  if (parsed.timeZone === "UTC") return datePart;
+  return `${datePart} ${parsed.date.toLocaleTimeString("en-US", { ...TIME, timeZone: parsed.timeZone })}`;
+};
 
 // Today's date in US time as "YYYY-MM-DD" – for new items (e.g. Date Added on upload).
 export const todayDate = () =>
