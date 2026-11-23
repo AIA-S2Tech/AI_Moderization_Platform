@@ -1,5 +1,6 @@
 import { Box, VStack, HStack, Text, Link, Divider } from "@chakra-ui/react";
 import { isAuthenticated } from "../../utils/auth"
+import { ROUTES } from "../../config/routes";
 const Footer = () => {
   const loggedIn = isAuthenticated();
 
@@ -25,7 +26,7 @@ const Footer = () => {
           fontWeight="600"
           color="black"
         >
-          <Link href="#" fontSize="sm">
+          <Link href={ROUTES.ABOUT} fontSize="sm">
             About AI Accelerator
           </Link>
           <Link href="/contact-us" fontSize="sm">

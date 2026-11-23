@@ -5,6 +5,7 @@ export const ROUTES = {
   SIGN_UP: "/sign-up",
   FORGOT_PASSWORD: "/forgot-password",
   CONTACT_US: "/contact-us",
+  ABOUT: "/about",
 
   // Home
   ROOT: "/",

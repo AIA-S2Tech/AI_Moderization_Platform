@@ -8,6 +8,7 @@ import SignIn from "../pages/SignIn";
 import ContactUsPage from "../pages/ContactUsPage";
 import ForgotPassword from "../pages/ForgotPassword";
 import UserRegister from "../pages/UserRegister";
+import AboutPage from "../pages/AboutPage";
 
 // Private pages
 import PlaceholderPage from "../pages/PlaceholderPage";
@@ -68,6 +69,7 @@ const AppRoutes = () => (
     <Route path={ROUTES.FORGOT_PASSWORD} element={<ForgotPassword />} />
     <Route path={ROUTES.CONTACT_US} element={<ContactUsPage />} />
     <Route path={ROUTES.SIGN_UP} element={<UserRegister />} />
+    <Route path={ROUTES.ABOUT} element={<AboutPage />} />
 
     {/* 404 */}
     <Route path="*" element={<NotFoundPage />} />
