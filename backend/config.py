@@ -40,6 +40,14 @@ class Config:
     JSON_SORT_KEYS = False
     PROPAGATE_EXCEPTIONS = True
 
+    # Evidence uploads (T-33). Limits match frontend/src/config/upload.js.
+    # EVIDENCE_STORAGE_PATH may be absolute or relative to backend/.
+    EVIDENCE_STORAGE_PATH = os.getenv("EVIDENCE_STORAGE_PATH", "uploads/evidence")
+    EVIDENCE_MAX_FILE_MB = int(os.getenv("EVIDENCE_MAX_FILE_MB", "50"))
+    EVIDENCE_ALLOWED_EXTENSIONS = {"zip", "pdf", "docx", "xlsx", "vsdx"}
+    # Whole-request cap (file + form fields); the per-file check is in evidence_routes.py.
+    MAX_CONTENT_LENGTH = (EVIDENCE_MAX_FILE_MB + 1) * 1024 * 1024
+
 
 ALLOWED_EXTENSIONS = {'pdf', 'doc', 'docx', 'png', 'jpg', 'jpeg'}
 

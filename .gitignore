@@ -29,3 +29,5 @@ credentials/
 .env
 .env.*
 !.env.example
+# Uploaded evidence files (T-33, EVIDENCE_STORAGE_PATH default)
+backend/uploads/
