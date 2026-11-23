@@ -50,6 +50,9 @@ def create_app():
     from app.users.routes import auth_bp
     app.register_blueprint(auth_bp, url_prefix="/api/auth")
 
+    from app.repositories.evidence_routes import evidence_bp  # T-33
+    app.register_blueprint(evidence_bp, url_prefix="/api/projects/<int:project_id>/evidence")
+
     with app.app_context():
 
         # Import ALL model modules here.
