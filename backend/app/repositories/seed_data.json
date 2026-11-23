@@ -1,0 +1,643 @@
+{
+  "_comment": "Seed rows for the 3 repositories (T-32). Same items as the frontend mock data (frontend/src/mocks/repositories.js), which match the Project Repositories mockup. `key` is only used by the seed to link certified items to their source evidence.",
+  "evidence": [
+    {
+      "key": "ev-001",
+      "name": "MMIS_COBOL_Source.zip",
+      "type": "Source Code",
+      "source": "Client",
+      "classification": "Confidential",
+      "version": "v1.0",
+      "status": "Validated",
+      "capability": "legacyDiscovery",
+      "date_added": "2024-10-14"
+    },
+    {
+      "key": "ev-002",
+      "name": "JCL_Procedures.pdf",
+      "type": "Document",
+      "source": "Client",
+      "classification": "Confidential",
+      "version": "v1.0",
+      "status": "Validated",
+      "capability": "legacyDiscovery",
+      "date_added": "2024-10-14"
+    },
+    {
+      "key": "ev-003",
+      "name": "System Architecture.docx",
+      "type": "Architecture",
+      "source": "Client",
+      "classification": "Internal",
+      "version": "v2.1",
+      "status": "Validated",
+      "capability": "legacyDiscovery",
+      "date_added": "2024-10-12"
+    },
+    {
+      "key": "ev-004",
+      "name": "Business Requirements.docx",
+      "type": "Requirements",
+      "source": "Client",
+      "classification": "Internal",
+      "version": "v1.3",
+      "status": "Validated",
+      "capability": "businessRuleIntelligence",
+      "date_added": "2024-10-10"
+    },
+    {
+      "key": "ev-005",
+      "name": "Data Model ERD.vsdx",
+      "type": "Data Model",
+      "source": "Client",
+      "classification": "Internal",
+      "version": "v1.0",
+      "status": "Validated",
+      "capability": "legacyDiscovery",
+      "date_added": "2024-10-10"
+    },
+    {
+      "key": "ev-006",
+      "name": "Operations Manual.pdf",
+      "type": "Procedure",
+      "source": "Client",
+      "classification": "Internal",
+      "version": "v4.0",
+      "status": "Validated",
+      "capability": "legacyDiscovery",
+      "date_added": "2024-10-08"
+    },
+    {
+      "key": "ev-007",
+      "name": "Interface Control Doc.pdf",
+      "type": "Interface",
+      "source": "Client",
+      "classification": "Confidential",
+      "version": "v1.2",
+      "status": "Validated",
+      "capability": "modernizationAssessment",
+      "date_added": "2024-10-08"
+    },
+    {
+      "key": "ev-008",
+      "name": "Test Cases.xlsx",
+      "type": "Test",
+      "source": "Client",
+      "classification": "Internal",
+      "version": "v1.0",
+      "status": "Validated",
+      "capability": "businessRuleIntelligence",
+      "date_added": "2024-10-06"
+    },
+    {
+      "key": "ev-009",
+      "name": "Policy Guidelines.pdf",
+      "type": "Policy",
+      "source": "Client",
+      "classification": "Public",
+      "version": "v3.0",
+      "status": "Validated",
+      "capability": "businessRuleIntelligence",
+      "date_added": "2024-10-05"
+    },
+    {
+      "key": "ev-010",
+      "name": "Meeting Notes - SMEs.docx",
+      "type": "Meeting Notes",
+      "source": "S2Tech",
+      "classification": "Internal",
+      "version": "v0.1",
+      "status": "In Review",
+      "capability": "businessRuleIntelligence",
+      "date_added": "2024-10-04"
+    },
+    {
+      "key": "ev-011",
+      "name": "Batch Job Schedule.xlsx",
+      "type": "Procedure",
+      "source": "Client",
+      "classification": "Internal",
+      "version": "v1.0",
+      "status": "Validated",
+      "capability": "legacyDiscovery",
+      "date_added": "2024-10-03"
+    },
+    {
+      "key": "ev-012",
+      "name": "CICS_Screen_Maps.zip",
+      "type": "Source Code",
+      "source": "Client",
+      "classification": "Confidential",
+      "version": "v1.0",
+      "status": "Validated",
+      "capability": "legacyDiscovery",
+      "date_added": "2024-10-03"
+    },
+    {
+      "key": "ev-013",
+      "name": "Eligibility Rules Manual.pdf",
+      "type": "Policy",
+      "source": "Client",
+      "classification": "Internal",
+      "version": "v2.0",
+      "status": "Validated",
+      "capability": "businessRuleIntelligence",
+      "date_added": "2024-10-02"
+    },
+    {
+      "key": "ev-014",
+      "name": "DB2 Schema Export.zip",
+      "type": "Data Model",
+      "source": "Client",
+      "classification": "Confidential",
+      "version": "v1.0",
+      "status": "In Review",
+      "capability": "legacyDiscovery",
+      "date_added": "2024-10-01"
+    },
+    {
+      "key": "ev-015",
+      "name": "Network Topology.vsdx",
+      "type": "Architecture",
+      "source": "Client",
+      "classification": "Confidential",
+      "version": "v1.1",
+      "status": "Validated",
+      "capability": "modernizationAssessment",
+      "date_added": "2024-09-30"
+    },
+    {
+      "key": "ev-016",
+      "name": "Stakeholder Interview Notes.docx",
+      "type": "Meeting Notes",
+      "source": "S2Tech",
+      "classification": "Internal",
+      "version": "v0.2",
+      "status": "Pending SME",
+      "capability": "legacyDiscovery",
+      "date_added": "2024-09-27"
+    },
+    {
+      "key": "ev-017",
+      "name": "Claims Processing Flow.pdf",
+      "type": "Procedure",
+      "source": "Client",
+      "classification": "Internal",
+      "version": "v1.0",
+      "status": "Validated",
+      "capability": "businessRuleIntelligence",
+      "date_added": "2024-09-26"
+    },
+    {
+      "key": "ev-018",
+      "name": "Provider Interface Spec.docx",
+      "type": "Interface",
+      "source": "Third Party",
+      "classification": "Confidential",
+      "version": "v2.0",
+      "status": "In Review",
+      "capability": "modernizationAssessment",
+      "date_added": "2024-09-25"
+    },
+    {
+      "key": "ev-019",
+      "name": "Regression Test Suite.xlsx",
+      "type": "Test",
+      "source": "Client",
+      "classification": "Internal",
+      "version": "v1.4",
+      "status": "Validated",
+      "capability": "aiCodeTransformation",
+      "date_added": "2024-09-24"
+    },
+    {
+      "key": "ev-020",
+      "name": "Security Policy.pdf",
+      "type": "Policy",
+      "source": "Client",
+      "classification": "Confidential",
+      "version": "v5.0",
+      "status": "Validated",
+      "capability": "targetedModernization",
+      "date_added": "2024-09-23"
+    },
+    {
+      "key": "ev-021",
+      "name": "Copybook_Library.zip",
+      "type": "Source Code",
+      "source": "Client",
+      "classification": "Confidential",
+      "version": "v1.0",
+      "status": "Validated",
+      "capability": "aiCodeTransformation",
+      "date_added": "2024-09-20"
+    },
+    {
+      "key": "ev-022",
+      "name": "Change Request Log.xlsx",
+      "type": "Requirements",
+      "source": "Client",
+      "classification": "Internal",
+      "version": "v1.0",
+      "status": "Pending SME",
+      "capability": "businessRuleIntelligence",
+      "date_added": "2024-09-19"
+    },
+    {
+      "key": "ev-023",
+      "name": "Vendor Contract Summary.pdf",
+      "type": "Document",
+      "source": "Third Party",
+      "classification": "Confidential",
+      "version": "v1.0",
+      "status": "In Review",
+      "capability": "targetedModernization",
+      "date_added": "2024-09-18"
+    },
+    {
+      "key": "ev-024",
+      "name": "Kickoff Workshop Notes.docx",
+      "type": "Meeting Notes",
+      "source": "S2Tech",
+      "classification": "Internal",
+      "version": "v1.0",
+      "status": "Validated",
+      "capability": "legacyDiscovery",
+      "date_added": "2024-09-16"
+    }
+  ],
+  "artifacts": [
+    {
+      "key": "ar-001",
+      "name": "System Overview",
+      "file_type": "docx",
+      "capability": "legacyDiscovery",
+      "version": "v0.1",
+      "status": "Generated",
+      "owner": "John Doe",
+      "last_updated": "2024-10-15"
+    },
+    {
+      "key": "ar-002",
+      "name": "Application Inventory",
+      "file_type": "docx",
+      "capability": "legacyDiscovery",
+      "version": "v0.2",
+      "status": "In Review",
+      "owner": "Priya Nair",
+      "last_updated": "2024-10-15"
+    },
+    {
+      "key": "ar-003",
+      "name": "Business Rules Analysis",
+      "file_type": "pdf",
+      "capability": "businessRuleIntelligence",
+      "version": "v0.1",
+      "status": "Generated",
+      "owner": "John Doe",
+      "last_updated": "2024-10-14"
+    },
+    {
+      "key": "ar-004",
+      "name": "Data Flow Diagrams",
+      "file_type": "pdf",
+      "capability": "legacyDiscovery",
+      "version": "v0.1",
+      "status": "In Review",
+      "owner": "Mark Chen",
+      "last_updated": "2024-10-14"
+    },
+    {
+      "key": "ar-005",
+      "name": "Modernization Options",
+      "file_type": "docx",
+      "capability": "modernizationAssessment",
+      "version": "v0.1",
+      "status": "Generated",
+      "owner": "Priya Nair",
+      "last_updated": "2024-10-13"
+    },
+    {
+      "key": "ar-006",
+      "name": "SME Validation Package",
+      "file_type": "pdf",
+      "capability": "businessRuleIntelligence",
+      "version": "v0.1",
+      "status": "In Review",
+      "owner": "Sara Lopez",
+      "last_updated": "2024-10-13"
+    },
+    {
+      "key": "ar-007",
+      "name": "Interface Inventory",
+      "file_type": "pdf",
+      "capability": "legacyDiscovery",
+      "version": "v0.3",
+      "status": "In Review",
+      "owner": "Mark Chen",
+      "last_updated": "2024-10-12"
+    },
+    {
+      "key": "ar-008",
+      "name": "Evidence Gap Analysis",
+      "file_type": "docx",
+      "capability": "modernizationAssessment",
+      "version": "v0.1",
+      "status": "Generated",
+      "owner": "John Doe",
+      "last_updated": "2024-10-12"
+    },
+    {
+      "key": "ar-009",
+      "name": "Test Scenario Drafts",
+      "file_type": "pdf",
+      "capability": "businessRuleIntelligence",
+      "version": "v0.1",
+      "status": "Draft",
+      "owner": "Sara Lopez",
+      "last_updated": "2024-10-11"
+    },
+    {
+      "key": "ar-010",
+      "name": "Decision Tables",
+      "file_type": "docx",
+      "capability": "businessRuleIntelligence",
+      "version": "v0.1",
+      "status": "Draft",
+      "owner": "Priya Nair",
+      "last_updated": "2024-10-11"
+    },
+    {
+      "key": "ar-011",
+      "name": "Batch Job Dependency Map",
+      "file_type": "pdf",
+      "capability": "legacyDiscovery",
+      "version": "v0.2",
+      "status": "Revised",
+      "owner": "Mark Chen",
+      "last_updated": "2024-10-10"
+    },
+    {
+      "key": "ar-012",
+      "name": "Rule Conflict Report",
+      "file_type": "xlsx",
+      "capability": "businessRuleIntelligence",
+      "version": "v0.1",
+      "status": "Generated",
+      "owner": "John Doe",
+      "last_updated": "2024-10-10"
+    },
+    {
+      "key": "ar-013",
+      "name": "Code Complexity Metrics",
+      "file_type": "xlsx",
+      "capability": "legacyDiscovery",
+      "version": "v0.1",
+      "status": "Ready for Certification",
+      "owner": "Sara Lopez",
+      "last_updated": "2024-10-09"
+    },
+    {
+      "key": "ar-014",
+      "name": "Impact Assessment",
+      "file_type": "docx",
+      "capability": "modernizationAssessment",
+      "version": "v0.2",
+      "status": "In Review",
+      "owner": "Priya Nair",
+      "last_updated": "2024-10-09"
+    },
+    {
+      "key": "ar-015",
+      "name": "Data Dictionary",
+      "file_type": "xlsx",
+      "capability": "legacyDiscovery",
+      "version": "v0.4",
+      "status": "Ready for Certification",
+      "owner": "Mark Chen",
+      "last_updated": "2024-10-08"
+    },
+    {
+      "key": "ar-016",
+      "name": "Eligibility Rule Catalog",
+      "file_type": "docx",
+      "capability": "businessRuleIntelligence",
+      "version": "v0.3",
+      "status": "Revised",
+      "owner": "Sara Lopez",
+      "last_updated": "2024-10-08"
+    },
+    {
+      "key": "ar-017",
+      "name": "Cost-Benefit Analysis",
+      "file_type": "xlsx",
+      "capability": "modernizationAssessment",
+      "version": "v0.1",
+      "status": "Draft",
+      "owner": "John Doe",
+      "last_updated": "2024-10-07"
+    },
+    {
+      "key": "ar-018",
+      "name": "Program Call Graph",
+      "file_type": "pdf",
+      "capability": "legacyDiscovery",
+      "version": "v0.1",
+      "status": "Generated",
+      "owner": "Mark Chen",
+      "last_updated": "2024-10-07"
+    }
+  ],
+  "certified_items": [
+    {
+      "key": "ce-001",
+      "name": "System Overview",
+      "file_type": "docx",
+      "capability": "legacyDiscovery",
+      "type": "Report",
+      "version": "v1.0",
+      "certified_date": "2024-10-15",
+      "approver": "Linda Park",
+      "source_evidence": [
+        "ev-003",
+        "ev-006"
+      ]
+    },
+    {
+      "key": "ce-002",
+      "name": "Application Inventory",
+      "file_type": "docx",
+      "capability": "legacyDiscovery",
+      "type": "Inventory",
+      "version": "v1.0",
+      "certified_date": "2024-10-15",
+      "approver": "Linda Park",
+      "source_evidence": [
+        "ev-001",
+        "ev-002"
+      ]
+    },
+    {
+      "key": "ce-003",
+      "name": "Business Rules Catalog",
+      "file_type": "docx",
+      "capability": "businessRuleIntelligence",
+      "type": "Catalog",
+      "version": "v1.0",
+      "certified_date": "2024-10-14",
+      "approver": "Raj Mehta",
+      "source_evidence": [
+        "ev-004",
+        "ev-009"
+      ]
+    },
+    {
+      "key": "ce-004",
+      "name": "Data Flow Diagrams",
+      "file_type": "pdf",
+      "capability": "legacyDiscovery",
+      "type": "Diagram",
+      "version": "v1.0",
+      "certified_date": "2024-10-14",
+      "approver": "Linda Park",
+      "source_evidence": [
+        "ev-005"
+      ]
+    },
+    {
+      "key": "ce-005",
+      "name": "Interface Inventory",
+      "file_type": "docx",
+      "capability": "legacyDiscovery",
+      "type": "Inventory",
+      "version": "v1.0",
+      "certified_date": "2024-10-13",
+      "approver": "Linda Park",
+      "source_evidence": [
+        "ev-007"
+      ]
+    },
+    {
+      "key": "ce-006",
+      "name": "Modernization Assessment",
+      "file_type": "pdf",
+      "capability": "modernizationAssessment",
+      "type": "Report",
+      "version": "v1.0",
+      "certified_date": "2024-10-13",
+      "approver": "Raj Mehta",
+      "source_evidence": [
+        "ev-003",
+        "ev-007"
+      ]
+    },
+    {
+      "key": "ce-007",
+      "name": "SME Validation Summary",
+      "file_type": "docx",
+      "capability": "businessRuleIntelligence",
+      "type": "Report",
+      "version": "v1.0",
+      "certified_date": "2024-10-12",
+      "approver": "Raj Mehta",
+      "source_evidence": [
+        "ev-010"
+      ]
+    },
+    {
+      "key": "ce-008",
+      "name": "Evidence Traceability Matrix",
+      "file_type": "docx",
+      "capability": "legacyDiscovery",
+      "type": "Matrix",
+      "version": "v1.0",
+      "certified_date": "2024-10-12",
+      "approver": "Linda Park",
+      "source_evidence": [
+        "ev-001",
+        "ev-004",
+        "ev-008"
+      ]
+    },
+    {
+      "key": "ce-009",
+      "name": "Decision Tables",
+      "file_type": "xlsx",
+      "capability": "businessRuleIntelligence",
+      "type": "Table",
+      "version": "v1.0",
+      "certified_date": "2024-10-11",
+      "approver": "Raj Mehta",
+      "source_evidence": [
+        "ev-004"
+      ]
+    },
+    {
+      "key": "ce-010",
+      "name": "Test Scenarios",
+      "file_type": "docx",
+      "capability": "businessRuleIntelligence",
+      "type": "Test",
+      "version": "v1.0",
+      "certified_date": "2024-10-11",
+      "approver": "Raj Mehta",
+      "source_evidence": [
+        "ev-008"
+      ]
+    },
+    {
+      "key": "ce-011",
+      "name": "Data Dictionary",
+      "file_type": "xlsx",
+      "capability": "legacyDiscovery",
+      "type": "Catalog",
+      "version": "v1.1",
+      "certified_date": "2024-10-10",
+      "approver": "Linda Park",
+      "source_evidence": [
+        "ev-005",
+        "ev-014"
+      ]
+    },
+    {
+      "key": "ce-012",
+      "name": "Batch Processing Overview",
+      "file_type": "pdf",
+      "capability": "legacyDiscovery",
+      "type": "Report",
+      "version": "v1.0",
+      "certified_date": "2024-10-09",
+      "approver": "Linda Park",
+      "source_evidence": [
+        "ev-011"
+      ]
+    },
+    {
+      "key": "ce-013",
+      "name": "Eligibility Rules Matrix",
+      "file_type": "xlsx",
+      "capability": "businessRuleIntelligence",
+      "type": "Matrix",
+      "version": "v2.0",
+      "certified_date": "2024-10-08",
+      "approver": "Raj Mehta",
+      "source_evidence": [
+        "ev-013"
+      ]
+    },
+    {
+      "key": "ce-014",
+      "name": "Current-State Architecture",
+      "file_type": "pdf",
+      "capability": "modernizationAssessment",
+      "type": "Diagram",
+      "version": "v1.0",
+      "certified_date": "2024-10-07",
+      "approver": "Raj Mehta",
+      "source_evidence": [
+        "ev-003",
+        "ev-015"
+      ]
+    }
+  ]
+}
