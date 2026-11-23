@@ -54,6 +54,7 @@ def create_app():
 
         # Import ALL model modules here.
         from app.users.models import User
+        from app.repositories import models as repository_models  # noqa: F401  (T-32)
 
         # Import your other model modules here.
         # Example:
@@ -61,5 +62,9 @@ def create_app():
         # from app.systems.models import System
 
         logging.info("Database extensions initialized.")
+
+    # CLI: flask --app run seed-repositories [--reset]  (T-32)
+    from app.repositories.seed import seed_repositories_command
+    app.cli.add_command(seed_repositories_command)
 
     return app
