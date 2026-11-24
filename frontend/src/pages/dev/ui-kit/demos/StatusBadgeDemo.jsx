@@ -26,6 +26,16 @@ const StatusBadgeDemo = () => (
       ))}
     </DemoRow>
 
+    <DemoRow label="Scope statuses – Out of Scope (greyed, dashed) vs Not Started">
+      <StatusBadge status="Not Started" />
+      <StatusBadge status="Out of Scope" />
+      <StatusBadge status="Disabled" />
+      <StatusBadge status="Draft" />
+      <StatusBadge status="Active" />
+      <StatusBadge status="Superseded" />
+      <StatusBadge status="Complete" />
+    </DemoRow>
+
     <DemoRow label="Case-insensitive / unknown / empty">
       <StatusBadge status="in review" />
       <StatusBadge status="CERTIFIED" />

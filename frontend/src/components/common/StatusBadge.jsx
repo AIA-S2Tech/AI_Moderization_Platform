@@ -16,6 +16,7 @@ import { Box } from "@chakra-ui/react";
 import {
   getStatusConfig,
   STATUS_TONES,
+  STATUS_TONE_STYLES,
   DEFAULT_STATUS_TONE,
 } from "../../config/statusConfig";
 
@@ -45,6 +46,7 @@ const StatusBadge = ({ status, size = "md", ...rest }) => {
       fontSize={s.fontSize}
       px={s.px}
       py={s.py}
+      {...STATUS_TONE_STYLES[tone]}
       {...rest}
     >
       {label}
