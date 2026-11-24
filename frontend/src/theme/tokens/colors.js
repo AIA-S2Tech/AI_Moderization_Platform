@@ -61,6 +61,9 @@ export const colors = {
     info: { bg: "#DBEAFE", fg: "#1D4ED8", border: "#BFDBFE" }, // Started, Generated
     neutral: { bg: "#E5E7EB", fg: "#4B5563", border: "#D1D5DB" }, // Not Started, Draft, unknown
     danger: { bg: "#FDECEE", fg: "#C8102E", border: "#F5C2C7" }, // errors, gaps, high risk
+    // Greyed-out: Out of Scope, Disabled, Superseded (S2-02). Lighter than neutral and
+    // shown with a dashed border, so Out of Scope never looks like Not Started.
+    muted: { bg: "#F6F8FB", fg: "#64748B", border: "#CBD5E1" },
   },
 
   // Extra accent tones used by FlowStepper / lifecycle diagrams.

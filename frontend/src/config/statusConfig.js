@@ -11,12 +11,20 @@ export const STATUS_TONES = {
   neutral: "status.neutral", // grey
   danger: "status.danger", // red
   purple: "accent.purple", // purple
+  muted: "status.muted", // greyed out – not applicable (Out of Scope, Disabled, Superseded)
+};
+
+// Extra badge styles per tone (beyond colours).
+export const STATUS_TONE_STYLES = {
+  muted: { borderStyle: "dashed" },
 };
 
 // Keys are lower-case so lookups are case-insensitive ("In Review" = "in review").
 export const STATUS_CONFIG = {
   certified: { label: "Certified", tone: "success" },
   validated: { label: "Validated", tone: "success" },
+  complete: { label: "Complete", tone: "success" }, // deliverable (S2-02)
+  active: { label: "Active", tone: "success" }, // scope version / project (S2-02)
 
   "in progress": { label: "In Progress", tone: "warning" },
   "in review": { label: "In Review", tone: "warning" },
@@ -29,7 +37,12 @@ export const STATUS_CONFIG = {
   "ready for certification": { label: "Ready for Certification", tone: "purple" },
 
   "not started": { label: "Not Started", tone: "neutral" },
-  draft: { label: "Draft", tone: "neutral" },
+  draft: { label: "Draft", tone: "neutral" }, // artifact, project, scope version
+
+  // Not applicable – greyed out, never confused with Not Started (S2-02).
+  "out of scope": { label: "Out of Scope", tone: "muted" },
+  disabled: { label: "Disabled", tone: "muted" },
+  superseded: { label: "Superseded", tone: "muted" },
 };
 
 // Unknown statuses fall back to neutral grey and show the text as given.
