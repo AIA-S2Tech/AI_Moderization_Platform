@@ -15,6 +15,7 @@ import StatusBadgeDemo from "./demos/StatusBadgeDemo";
 import CardDemo from "./demos/CardDemo";
 import TabsDemo from "./demos/TabsDemo";
 import DataTableDemo from "./demos/DataTableDemo";
+import ScopeCheckboxTreeDemo from "./demos/ScopeCheckboxTreeDemo";
 import RepositoryPanelDemo from "./demos/RepositoryPanelDemo";
 import WorkspaceHeaderDemo from "./demos/WorkspaceHeaderDemo";
 import WorkspaceComponentsDemo from "./demos/WorkspaceComponentsDemo";
@@ -27,6 +28,7 @@ const demos = [
   { id: "card", label: "Card / SectionCard / PageHeader", Component: CardDemo },
   { id: "tabs", label: "Tabs", Component: TabsDemo },
   { id: "data-table", label: "DataTable", Component: DataTableDemo },
+  { id: "scope-checkbox-tree", label: "ScopeCheckboxTree", Component: ScopeCheckboxTreeDemo },
   { id: "repository-panel", label: "RepositoryPanel", Component: RepositoryPanelDemo },
   { id: "workspace-header", label: "WorkspaceHeader", Component: WorkspaceHeaderDemo },
   { id: "workspace-components", label: "Workspace components", Component: WorkspaceComponentsDemo },
