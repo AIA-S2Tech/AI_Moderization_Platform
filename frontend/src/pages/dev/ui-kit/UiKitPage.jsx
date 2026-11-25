@@ -11,6 +11,7 @@ import React from "react";
 import { Box, Flex, Link, Text } from "@chakra-ui/react";
 import PageHeader from "../../../components/common/PageHeader";
 import ButtonDemo from "./demos/ButtonDemo";
+import FormFieldsDemo from "./demos/FormFieldsDemo";
 import StatusBadgeDemo from "./demos/StatusBadgeDemo";
 import CardDemo from "./demos/CardDemo";
 import TabsDemo from "./demos/TabsDemo";
@@ -23,6 +24,7 @@ import DashboardComponentsDemo from "./demos/DashboardComponentsDemo";
 
 const demos = [
   { id: "button", label: "Button", Component: ButtonDemo },
+  { id: "form-fields", label: "Form fields", Component: FormFieldsDemo },
   { id: "status-badge", label: "StatusBadge", Component: StatusBadgeDemo },
   { id: "card", label: "Card / SectionCard / PageHeader", Component: CardDemo },
   { id: "tabs", label: "Tabs", Component: TabsDemo },
